@@ -8,6 +8,7 @@ public class ClinicaSolarApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ClinicaSolarApplication.class, args);
+		System.out.println("Clinica Solar Application is running!");
 	}
 
 }

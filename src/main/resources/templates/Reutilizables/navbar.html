@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title th:text="${pageTitle}">TitDefec</title>
+</head>
+<body>
+	<div th:fragment="navbar">
+	    <div class="d-flex flex-column flex-shrink-0 p-3 bg-dark text-white" style="width: 250px; height: 100vh;">
+	        <a th:href="@{/home}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+	            <span class="fs-4">Clinica Solar</span>
+	        </a>
+	        <hr>
+	        <ul class="nav nav-pills flex-column mb-auto">
+	            <li class="nav-item">
+	                <a th:href="@{/JefeCompras/homeJC}" class="nav-link text-white" aria-current="page">
+	                    <i class="bi bi-house-door me-2"></i>Inicio
+	                </a>
+	            </li>
+	            <li>
+	                <a th:href="@{/JefeCompras/listaCompras}" class="nav-link text-white">
+	                    <i class="bi bi-info-circle me-2"></i>Lista de Pedidos
+	                </a>
+	            </li>
+	            <li>
+	                <a th:href="@{/JefeCompras/comprarProductos}" class="nav-link text-white">
+	                    <i class="bi bi-envelope me-2"></i>Realizar Compras
+	                </a>
+	            </li>
+	            <li>
+	                <a th:href="@{/JefeCompras/listaProveedores}" class="nav-link text-white">
+	                    <i class="bi bi-box-arrow-in-right me-2"></i>Proveedores
+	                </a>
+	            </li>
+	        </ul>
+	        <hr>
+	        <div class="dropdown">
+	            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+	               id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+	                <img src="https://definicion.de/wp-content/uploads/2019/07/perfil-de-usuario.png" alt="user" width="32" height="32" class="rounded-circle me-2">
+	                <strong>Usuario</strong>
+	            </a>
+	            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+	                <li><a class="dropdown-item" href="#">Perfil</a></li>
+	                <li><a class="dropdown-item" href="#">Configuración</a></li>
+	                <li><hr class="dropdown-divider"></li>
+	                <li><a class="dropdown-item" href="/">Cerrar sesión</a></li>
+	            </ul>
+	        </div>
+	    </div>
+	</div>
+</body>
+</html>

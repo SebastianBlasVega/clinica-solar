@@ -10,6 +10,9 @@ import com.sharp.clinica_solar.models.Producto;
 import com.sharp.clinica_solar.repositories.ProductoRepository;
 import com.sharp.clinica_solar.services.ElementoService;
 
+import jakarta.servlet.http.HttpServletResponse;
+
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,12 +44,13 @@ public class ProductoController {
             return "redirect:/jefeareas/productos";
         }
     }
-
+    
     @PostMapping("/guardar")
-    public String guardarProducto(@ModelAttribute Elemento elemento) {
-        elementoService.guardarElemento(elemento);
-        return "redirect:/jefeareas/productos";
-    }
+  public void guardarProducto(@ModelAttribute Elemento elemento, HttpServletResponse response) throws IOException {
+		elementoService.guardarElemento(elemento);
+		response.sendRedirect("/jefeareas/productos");
+	}
+
 
     @GetMapping("/eliminar/{id}")
     public String eliminarProducto(@PathVariable Long id ) {
